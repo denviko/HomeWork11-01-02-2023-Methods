@@ -1,8 +1,9 @@
+import java.time.LocalDate;
+
 public class Main {
     public static void main(String[] args) {
 
-        printYearLeap(2020);
-        printYearLeap(2023);
+        printYearLeap();
 
         checkDeviseYear(1, 2015);
         checkDeviseYear(0, 2016);
@@ -11,12 +12,13 @@ public class Main {
     }
 
 
-    public static void printYearLeap(int year) {
-        boolean leapYear = (year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0);
+    public static void printYearLeap() {
+        int currentYear = LocalDate.now().getYear();
+        boolean leapYear = (currentYear % 4 == 0) && (currentYear % 100 != 0) || (currentYear % 400 == 0);
         if (leapYear) {
-            System.out.println(year + (" год является високосным."));
+            System.out.println(currentYear + (" год является високосным."));
         } else {
-            System.out.println(year + (" год не является високосным."));
+            System.out.println(currentYear + (" год не является високосным."));
         }
     }
 
