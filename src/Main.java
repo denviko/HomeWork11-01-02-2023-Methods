@@ -2,10 +2,10 @@ public class Main {
     public static void main(String[] args) {
 
         printYearLeap(2020);
-        printYearLeap(2022);
+        printYearLeap(2023);
 
-        checkDeviseYear(1,2010);
-        checkDeviseYear(0,2020);
+        checkDeviseYear(1, 2015);
+        checkDeviseYear(0, 2016);
 
         checkDeliveryDistance(50);
     }
@@ -21,26 +21,31 @@ public class Main {
     }
 
 
-    public static void checkDeviseYear(int clientOs,int clientDeviceYear) {
+    public static void checkDeviseYear(int clientOs, int clientDeviceYear) {
         int iOs = 0;
         int Android = 1;
-        if (clientOs == iOs && (clientDeviceYear <= 2015 || clientDeviceYear > 2015)) {
-            System.out.println("Установите версию приложения для iOS по ссылке");
-            if (clientDeviceYear <= 2015) {
+        if (clientOs == iOs) {
+            if (clientDeviceYear > 2015) {
                 System.out.println("Установите облегчённую версию приложения для iOS по ссылке");
             }
-        }
-
-        if (clientOs == Android && (clientDeviceYear <= 2015 || clientDeviceYear > 2015)) {
-            System.out.println("Установите версию приложения для Android по ссылке");
             if (clientDeviceYear <= 2015) {
-                System.out.println("Установите облегчённую версию приложения для android по ссылке");
-
+                    System.out.println("Установите версию приложения для iOS по ссылке");
+                }
             }
-        }
-    }
+        if (clientOs == Android) {
+             if (clientDeviceYear > 2015) {
+                    System.out.println("Установите облегчённую версию приложения для android по ссылке");
+            }
+            if (clientDeviceYear <= 2015) {
+                        System.out.println("Установите версию приложения для Android по ссылке");
+                    }
+                }
+            }
 
-    public static void checkDeliveryDistance(int deliveryDistance) {
+
+
+
+        public static void checkDeliveryDistance ( int deliveryDistance){
         boolean oneDay = (deliveryDistance < 20);
         if (oneDay) {
             System.out.println("Потребуется 1 день");
@@ -58,4 +63,5 @@ public class Main {
             }
         }
     }
+
 }
